@@ -1,5 +1,7 @@
 package org.yhonatan.practice.postal.code.distance.core;
 
+import org.springframework.util.Assert;
+
 import java.math.BigDecimal;
 
 class Location {
@@ -22,6 +24,8 @@ class Location {
     }
 
     public static Location aLocation(final BigDecimal latitude, final BigDecimal longitude) {
+        Assert.isTrue(latitude != null, "Latitude must not be null.");
+        Assert.isTrue(longitude != null, "Longitude must not be null.");
         return new Location(latitude, longitude);
     }
 
