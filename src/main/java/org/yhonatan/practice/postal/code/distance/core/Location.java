@@ -4,7 +4,7 @@ import org.springframework.util.Assert;
 
 import java.math.BigDecimal;
 
-class Location {
+public class Location {
 
     private final BigDecimal latitude;
 

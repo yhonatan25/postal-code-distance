@@ -2,7 +2,7 @@ package org.yhonatan.practice.postal.code.distance.core;
 
 import org.springframework.util.Assert;
 
-class PostalLocation {
+public class PostalLocation {
 
     private final String postalCode;
 
