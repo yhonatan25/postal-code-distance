@@ -6,6 +6,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
+import org.yhonatan.practice.postal.code.distance.core.exception.NullDistanceRequestException;
 
 import static java.math.BigDecimal.ONE;
 import static java.math.BigDecimal.valueOf;
@@ -56,5 +57,11 @@ public class PostalLocationFacadeTest {
         assertThat(postalDistance.getFinalPostalLocation(), is(FINAL_POSTAL_LOCATION));
         assertThat(postalDistance.getDistance(), is(ONE));
         assertThat(postalDistance.getUnit(), is(EXPECTED_UNIT));
+    }
+
+    @Test(expected = NullDistanceRequestException.class)
+    public void testGetDistanceWhenDistanceRequestIsNull() {
+        final DistanceRequest distanceRequest = null;
+        final PostalDistance postalDistance = postalLocationFacade.getDistance(distanceRequest);
     }
 }
