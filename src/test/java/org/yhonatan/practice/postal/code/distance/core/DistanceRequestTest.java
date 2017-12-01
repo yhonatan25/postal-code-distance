@@ -15,7 +15,7 @@ public class DistanceRequestTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testCreateADistanceRequestWhenReceivingEmptyInitialPostalCode() {
-        aDistanceRequest(null, POSTAL_CODE);
+        aDistanceRequest("", POSTAL_CODE);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -25,6 +25,6 @@ public class DistanceRequestTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testCreateADistanceRequestWhenReceivingEmptyFinalPostalCode() {
-        aDistanceRequest(POSTAL_CODE, null);
+        aDistanceRequest(POSTAL_CODE, "");
     }
 }
