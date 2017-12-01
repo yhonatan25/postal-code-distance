@@ -1,10 +1,11 @@
-package org.yhonatan.practice.postal.code.distance.jpa;
+package org.yhonatan.practice.postal.code.distance.service;
 
 import org.yhonatan.practice.postal.code.distance.core.Location;
 import org.yhonatan.practice.postal.code.distance.core.PostalLocation;
 import org.yhonatan.practice.postal.code.distance.core.PostalLocationService;
 import org.yhonatan.practice.postal.code.distance.jpa.entity.PostalLocationEntity;
 import org.yhonatan.practice.postal.code.distance.jpa.exception.PostalCodeNotFoundException;
+import org.yhonatan.practice.postal.code.distance.jpa.repository.PostalLocationEntityRepository;
 
 import static org.yhonatan.practice.postal.code.distance.core.Location.aLocation;
 import static org.yhonatan.practice.postal.code.distance.core.PostalLocation.aPostalLocation;

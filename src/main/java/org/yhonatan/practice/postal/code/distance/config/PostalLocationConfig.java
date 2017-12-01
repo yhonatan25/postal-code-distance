@@ -6,8 +6,8 @@ import org.yhonatan.practice.postal.code.distance.core.DistanceCalculator;
 import org.yhonatan.practice.postal.code.distance.core.HaversineDistanceCalculator;
 import org.yhonatan.practice.postal.code.distance.core.PostalLocationFacade;
 import org.yhonatan.practice.postal.code.distance.core.PostalLocationService;
-import org.yhonatan.practice.postal.code.distance.jpa.JpaPostalLocationService;
-import org.yhonatan.practice.postal.code.distance.jpa.PostalLocationEntityRepository;
+import org.yhonatan.practice.postal.code.distance.service.JpaPostalLocationService;
+import org.yhonatan.practice.postal.code.distance.jpa.repository.PostalLocationEntityRepository;
 
 @Configuration
 public class PostalLocationConfig {

@@ -1,4 +1,4 @@
-package org.yhonatan.practice.postal.code.distance.jpa;
+package org.yhonatan.practice.postal.code.distance.service;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -9,6 +9,7 @@ import org.yhonatan.practice.postal.code.distance.core.Location;
 import org.yhonatan.practice.postal.code.distance.core.PostalLocation;
 import org.yhonatan.practice.postal.code.distance.jpa.entity.PostalLocationEntity;
 import org.yhonatan.practice.postal.code.distance.jpa.exception.PostalCodeNotFoundException;
+import org.yhonatan.practice.postal.code.distance.jpa.repository.PostalLocationEntityRepository;
 
 import java.math.BigDecimal;
 
