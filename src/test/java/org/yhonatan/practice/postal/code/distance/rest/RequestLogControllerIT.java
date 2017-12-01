@@ -6,12 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.math.BigDecimal;
-
-import static java.math.BigDecimal.valueOf;
+import static org.springframework.test.annotation.DirtiesContext.ClassMode.BEFORE_CLASS;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -19,12 +18,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
+@DirtiesContext(classMode = BEFORE_CLASS)
 public class RequestLogControllerIT {
     private static final String INITIAL_POSTAL_CODE = "AB10 1XG";
     private static final String FINAL_POSTAL_CODE = "AB15 6NA";
-    private static final BigDecimal DISTANCE = valueOf(4.3394);
-    private static final String UNIT = "km";
-
     private static final String POSTAL_CODE = "AB10 1XG";
 
     @Autowired
@@ -38,6 +35,9 @@ public class RequestLogControllerIT {
         mockMvc.perform(get("/requests?postal-code={postalCode}", POSTAL_CODE)
                 .accept(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.initialPostalCode").exists());
+                .andExpect(jsonPath("$.[0].initialPostalCode").value(INITIAL_POSTAL_CODE))
+                .andExpect(jsonPath("$.[0].finalPostalCode").value(FINAL_POSTAL_CODE))
+                .andExpect(jsonPath("$.[0].creationInstant").exists())
+                .andExpect(jsonPath("$.[0].requestInstant").exists());
     }
 }
