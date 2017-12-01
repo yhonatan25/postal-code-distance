@@ -55,7 +55,6 @@ public class JpaPostalLocationServiceTest {
         when(postalLocationEntityRepository.getByPostalCode(POSTAL_CODE)).thenReturn(null);
 
         final PostalLocation postalLocation = jpaPostalLocationService.getPostalLocation(POSTAL_CODE);
-
     }
 
 }

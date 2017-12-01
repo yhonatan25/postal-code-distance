@@ -6,6 +6,7 @@ import org.yhonatan.practice.postal.code.distance.core.PostalLocationService;
 import org.yhonatan.practice.postal.code.distance.jpa.entity.PostalLocationEntity;
 import org.yhonatan.practice.postal.code.distance.jpa.exception.PostalCodeNotFoundException;
 
+import static org.yhonatan.practice.postal.code.distance.core.Location.aLocation;
 import static org.yhonatan.practice.postal.code.distance.core.PostalLocation.aPostalLocation;
 
 public class JpaPostalLocationService implements PostalLocationService {
@@ -21,7 +22,7 @@ public class JpaPostalLocationService implements PostalLocationService {
 
         validatePostalCodeExists(postalCode, postalLocationEntity);
 
-        final Location location = Location.aLocation(postalLocationEntity.getLatitude(), postalLocationEntity.getLongitude());
+        final Location location = aLocation(postalLocationEntity.getLatitude(), postalLocationEntity.getLongitude());
         return aPostalLocation(postalLocationEntity.getPostalCode(), location);
     }
 
