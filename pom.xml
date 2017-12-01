@@ -11,12 +11,11 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>${spring.boot.starter.parent.version}</version>
+        <version>1.5.9.RELEASE</version>
     </parent>
 
     <properties>
         <java.version>1.8</java.version>
-        <spring.boot.starter.parent.version>1.5.7.RELEASE</spring.boot.starter.parent.version>
     </properties>
 
     <dependencies>
@@ -24,12 +23,22 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.obermuhlner</groupId>
+            <artifactId>big-math</artifactId>
+            <version>1.3.0</version>
+        </dependency>
         <!-- Runtime -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <!-- Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

@@ -23,6 +23,10 @@ public class PostalLocationEntity implements Serializable{
     @Column(nullable = false)
     private BigDecimal longitude;
 
+    public PostalLocationEntity(){
+
+    }
+
     public PostalLocationEntity(final Long id, final String postalCode, final BigDecimal latitude, final BigDecimal longitude) {
         this.id = id;
         this.postalCode = postalCode;
